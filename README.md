@@ -4,22 +4,25 @@ Hurl
 Hurl was created for the Rails Rumble 2009 in 48 hours.
 Now Hurl is an open source project for your enjoyment.
 
-<http://hurl.it/>
+ - The official url is: <http://hurl.it/>
+ - The unofficial url is: <http://hurl.eu/> (because hurl.it is so often **502 Bad Gateway**)
 
 
 Installation
 ------------
 
-Hurl requires Ruby 1.8.6+
+Hurl requires Ruby 1.8.6+ (but I recommend to use ruby 1.9)
+
+    apt-get install ruby1.9-dev
 
 First download hurl and cd into the directory:
 
     git clone git://github.com/twilio/hurl
     cd hurl
 
-Or download [the zip](http://github.com/twilio/hurl/zipball/master).
+Install [RubyGems](https://rubygems.org/pages/download):
 
-Next make sure you have [RubyGems](https://rubygems.org/pages/download) installed.
+    sudo apt-get install rubygems
 
 Then install [Bundler](http://gembundler.com/):
 
@@ -28,6 +31,11 @@ Then install [Bundler](http://gembundler.com/):
 Now install Hurl's dependencies:
 
     bundle install
+    
+If you got problem with curb, run these commands and re-try `bundle install`:
+
+    sudo apt-get install curl libcurl3 libcurl3-gnutls libcurl4-openssl-dev
+    gem install curb --platform=ruby
 
 
 Run Locally
@@ -48,7 +56,7 @@ here](http://github.com/twilio/hurl/issues). Patches welcome!
 Screenshot
 ----------
 
-[![Hurl](http://img.skitch.com/20091020-xtiqtj4eajuxs43iu5h3be7upj.png)](http://hurl.it)
+[![Hurl](http://img.skitch.com/20091020-xtiqtj4eajuxs43iu5h3be7upj.png)](http://hurl.eu)
 
 
 Original Authors
@@ -57,7 +65,5 @@ Original Authors
 * [Leah Culver][2]
 * [Chris Wanstrath][3]
 
-
-[1]: http://r09.railsrumble.com/
 [2]: http://github.com/leah
 [3]: http://github.com/defunkt
