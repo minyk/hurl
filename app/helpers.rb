@@ -29,6 +29,10 @@ module Hurl
       @ga_code
     end
 
+    def website
+      @website
+    end
+
     def user
       @user
     end

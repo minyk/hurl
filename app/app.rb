@@ -31,11 +31,11 @@ module Hurl
 
     def initialize(*args)
       super
-      @debug = ENV['DEBUG']
-      @ga_code = ENV['GA_CODE']
+      @debug    = ENV['DEBUG']
+      @ga_code  = ENV['GA_CODE']
+      @website  = ENV['WEBSITE']
       setup_default_hurls
     end
-
 
     #
     # routes
@@ -207,7 +207,7 @@ module Hurl
       valid_schemes = ['http', 'https']
       begin
         uri = URI.parse(url)
-        raise URI::InvalidURIError if uri.host == 'hurl.it'
+        raise URI::InvalidURIError if uri.host == (ENV['WEBSITE'] || "hurl.it")
         raise URI::InvalidURIError if !valid_schemes.include? uri.scheme
         false
       rescue URI::InvalidURIError
