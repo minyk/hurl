@@ -1,7 +1,7 @@
 /* general */
 body {
   font: 1em "lucida Grande",arial,sans-serif;
-  background: #fff url(/img/rainbow.png) repeat;
+  /*background: #fff url(/img/rainbow.png) repeat;*/
   color: #333;
 }
 p {
