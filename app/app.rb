@@ -7,10 +7,10 @@ module Hurl
 
     dir = File.dirname(File.expand_path(__FILE__))
 
-    set :public,   "#{dir}/public"
-    set :root,     RACK_ROOT
-    set :app_file, __FILE__
-    set :static,   true
+    set :public_folder,   "#{dir}/../public"
+    set :root,            RACK_ROOT
+    set :app_file,        __FILE__
+    set :static,          true
 
     set :views, "#{dir}/templates"
 
