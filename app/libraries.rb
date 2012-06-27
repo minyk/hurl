@@ -14,7 +14,6 @@ require 'sinatra/base'
 require 'yajl'
 require 'curb'
 require 'mustache/sinatra'
-require 'sinatra/auth/github'
 require 'coderay'
 
 $LOAD_PATH.unshift File.expand_path(File.dirname(__FILE__))
@@ -23,6 +22,5 @@ $LOAD_PATH.unshift File.expand_path(File.dirname(__FILE__))
 require 'helpers'
 
 require 'models/db'
-require 'models/user'
 
 require 'views/layout'

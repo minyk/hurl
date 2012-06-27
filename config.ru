@@ -4,8 +4,8 @@ end
 
 begin
   require './env'
-rescue LoadError 
-  nil	
+rescue LoadError
+  nil
 end
 
 require 'app/app'
