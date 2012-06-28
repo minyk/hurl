@@ -2,3 +2,4 @@ db/
 .bundle/
 bin/
 env.rb
+log/
