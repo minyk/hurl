@@ -2,7 +2,6 @@ module Views
   class Stats < Layout
     def hurl_stats
       return [
-        count(:users),
         count(:views),
         count(:hurls)
       ]
