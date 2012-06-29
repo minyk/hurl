@@ -31,21 +31,6 @@
 <body>
   <div id="inset">
     <div id="header">
-      <div id="nav">
-        {{# logged_in? }}
-          {{# user}}
-            <a href="/hurls/" class="nav-item">
-              <img src="{{ gravatar_url }}" class="gravatar">
-              {{ login }}'s hurls
-            </a>
-          {{/ user}}
-          <a href="/logout/" class="nav-item">log out</a>
-        {{/ logged_in? }}
-
-        {{^ logged_in?}}
-         <a href="/login/">log in</a> to save your hurls
-        {{/ logged_in?}}
-     </div>
       <a href="/"><img src="/img/logo.png" title="hurl" /></a>
     </div>
     <div id="content">

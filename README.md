@@ -53,8 +53,6 @@ If you want to configure few things, create a file `env.rb` in the root dir with
 
 ````ruby
 ENV['DEBUG']          = '0'
-ENV['HURL_CLIENT_ID'] = 'xxxx' # github client_id
-ENV['HURL_SECRET']    = 'xxxx' # github secret key
 ENV['WEBSITE']        = 'hurl.eu' # url of the website
 ENV['GA_CODE']        = 'UA-345518-XX' # Google Analytics code
 ````

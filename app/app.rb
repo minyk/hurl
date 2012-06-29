@@ -7,10 +7,10 @@ module Hurl
 
     dir = File.dirname(File.expand_path(__FILE__))
 
-    set :public,   "#{dir}/public"
-    set :root,     RACK_ROOT
-    set :app_file, __FILE__
-    set :static,   true
+    set :public_folder,   "#{dir}/../public"
+    set :root,            RACK_ROOT
+    set :app_file,        __FILE__
+    set :static,          true
 
     set :views, "#{dir}/templates"
 
@@ -21,13 +21,6 @@ module Hurl
     }
 
     enable :sessions
-
-    set :github_options, { :client_id    => ENV['HURL_CLIENT_ID'],
-                           :secret       => ENV['HURL_SECRET'],
-                           :scopes       => '',
-                           :callback_url => '/login/callback/' }
-
-    register ::Sinatra::Auth::Github
 
     def initialize(*args)
       super
@@ -42,10 +35,6 @@ module Hurl
     #
 
     before do
-      if authenticated?
-        @user = User.new(github_user)
-      end
-
       @flash = session.delete('flash')
     end
 
@@ -54,24 +43,9 @@ module Hurl
       mustache :index
     end
 
-    get '/hurls/?' do
-      redirect('/') and return unless logged_in?
-      @hurls = @user.hurls
-      mustache :hurls
-    end
-
     get '/hurls/:id/?' do
       @hurl = find_hurl_or_view(params[:id])
       @hurl ? mustache(:index) : not_found
-    end
-
-    delete '/hurls/:id/?' do
-      redirect('/') and return unless logged_in?
-
-      if @hurl = find_hurl_or_view(params[:id])
-        @user.remove_hurl(@hurl['id'])
-      end
-      request.xhr? ? "ok" : redirect('/')
     end
 
     get '/hurls/:id/:view_id/?' do
@@ -102,22 +76,6 @@ module Hurl
 
     get '/stats/?' do
       mustache :stats
-    end
-
-    get '/login/?' do
-      authenticate!
-      redirect '/'
-    end
-
-    get '/login/callback/?' do
-      authenticate!
-      redirect '/'
-    end
-
-    get '/logout/?' do
-      logout!
-      session['flash'] = 'see you later!'
-      redirect '/'
     end
 
     post '/' do
@@ -177,7 +135,6 @@ module Hurl
              :body      => body,
              :request   => request,
              :hurl_id   => save_hurl(params),
-             :prev_hurl => @user ? @user.second_to_last_hurl_id : nil,
              :view_id   => save_view(header, body, request)
       rescue => e
         json :error => CGI::escapeHTML(e.to_s)
@@ -258,7 +215,6 @@ module Hurl
     def save_hurl(params)
       id = sha(params.to_s)
       DB.save(:hurls, id, params.merge(:id => id))
-      @user.add_hurl(id) if @user
       id
     end
 

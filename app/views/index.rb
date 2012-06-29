@@ -1,19 +1,7 @@
 module Views
   class Index < Layout
-    def previous_hurl
-      if prev = prev_hurl
-        [ :hurl => prev.to_s ]
-      end
-    end
-
-    def next_hurl
-      if nxt = super
-        [ :hurl => nxt.to_s ]
-      end
-    end
-
     def help_blurb_hidden?
-      logged_in? or not @hurl.empty?
+      not @hurl.empty?
     end
 
     def try_it_hidden?

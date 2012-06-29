@@ -21,10 +21,6 @@ module Hurl
       Digest::SHA1.hexdigest(thing.to_s)
     end
 
-    def logged_in?
-      !!@user
-    end
-
     def ga_code
       @ga_code
     end
@@ -33,43 +29,9 @@ module Hurl
       @website
     end
 
-    def user
-      @user
-    end
-
     # for sorting hashes with symbol keys
     def sort_hash(hash)
       hash.to_a.sort_by { |a, b| a.to_s }
-    end
-
-    def next_hurl
-      return unless logged_in?
-
-      if @hurl
-        hurls = @user.hurls
-        hurls.each_with_index do |hurl, i|
-          if hurl['id'] == @hurl['id']
-            return i-1 >= 0 ? hurls[i-1]['id'] : nil
-          end
-        end
-        nil
-      end
-    end
-
-    def prev_hurl
-      return unless logged_in?
-
-      if @hurl.empty? && @user.hurls.any?
-        @user.latest_hurl_id
-      elsif @hurl.any?
-        hurls = @user.hurls
-        hurls.each_with_index do |hurl, i|
-          if hurl['id'] == @hurl['id']
-            return hurls[i+1] ? hurls[i+1]['id'] : nil
-          end
-        end
-        nil
-      end
     end
 
     # creates the hurls shown on the front page if they're not in the db
