@@ -3,33 +3,34 @@
     $(el).autocompleteArray(keyNames( Headers ), {
       delay: 40,
       onItemSelect: function(e) {
-        var header = $(e).text(), next = $(el).siblings('input')
-        var more = Headers[header]
+        var header = $(e).text(),
+            next   = $(el).parent().parent().find('input.header-val'),
+            more   = Headers[header];
 
         if ( header == "User-Agent" ) {
           next.autocompleteArray(keyNames( Headers['User-Agent'] ), {
             delay: 40,
             onItemSelect: function(row) {
-              next.val( Headers['User-Agent'][$(row).text()] )
+              next.val( Headers['User-Agent'][$(row).text()] );
             }
-          })
+          });
         } else if ( more == "date" ) {
-          next.focus().val( GetRFC822Date(new Date) )
+          next.focus().val( GetRFC822Date(new Date) );
         } else if ( more ) {
-          next.autocompleteArray( more, { delay: 40 } )
+          next.autocompleteArray( more, { delay: 40 } );
         }
 
-        next.focus()
+        next.focus();
       }
-    })
-  }
+    });
+  };
 
   function keyNames(obj) {
-    var names = []
+    var names = [];
     for (name in obj) {
-      names.push(name)
+      names.push(name);
     }
-    return names
+    return names;
   }
 
   var Headers = {
@@ -80,7 +81,7 @@
       "Safari 4.0.2 - Mac": "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_7; en-us) AppleWebKit/530.19.2 (KHTML, like Gecko) Version/4.0.2 Safari/530.19",
       "Safari 4.0.2 - Windows": "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/530.19.2 (KHTML, like Gecko) Version/4.0.2 Safari/530.19.1"
     }
-  }
+  };
 
 
   /*
@@ -127,7 +128,7 @@
     var modMin = Math.abs(timezoneOffset%60);
     var s = new String();
     s += (hours > 0) ? "-" : "+";
-    var absHours = Math.abs(hours)
+    var absHours = Math.abs(hours);
     s += (absHours < 10) ? "0" + absHours :absHours;
     s += ((modMin == 0) ? "00" : modMin);
     return(s);

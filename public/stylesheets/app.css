@@ -1,3 +1,103 @@
+
+.hr-blue {
+  border: 0;
+  background-color: #26B3CF;
+  color: #26B3CF;
+  height: 5px;
+  margin: 0 0 21px;
+}
+
+.hr-blue.footer {
+  margin: 0;
+}
+
+form.custom div.select_method div.custom.dropdown, form.custom div.select_method ul {
+  width: 225px !important;
+}
+
+div.panel.radius.help :last-child {
+  margin-bottom: 16px;
+}
+
+ul.examples {
+  list-style: none;
+}
+
+ul.examples li {
+  padding-left: 24px;
+  margin: 3px 0;
+}
+ul.examples li.twitter {
+  background: transparent url(http://twitter.com/favicon.ico) 0 40% no-repeat;
+}
+ul.examples li.vimeo {
+  background: transparent url(http://vimeo.com/favicon.ico) 0 40% no-repeat;
+}
+ul.examples li.github {
+  background: transparent url(http://github.com/favicon.png) 0 40% no-repeat;
+}
+ul.examples li.twilio {
+  background: transparent url(http://www.twilio.com/favicon.ico) 0 40% no-repeat;
+  background-size: 16px 16px;
+}
+ul.examples li.baconfile {
+  background: transparent url(http://baconfile.com/favicon.ico) 0 40% no-repeat;
+}
+
+div .about-video, div.unicorn p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+div .about-video object {
+  height: 359px;
+}
+
+footer {
+  margin-bottom: 15px !important;
+}
+
+body.raw-view {
+  font-family:'Bitstream Vera Sans Mono','Courier',monospace;
+  font-size: 14px;
+  background-color: #e9eaea;
+  padding: 8px 16px;
+}
+
+.highlight {
+  background: transparent;
+}
+
+#spinner {
+  padding-right: 9px;
+  display: none;
+}
+
+.code-wrap {
+  margin-top: 14px;
+  background-color: #EEE;
+  padding: 8px 16px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+.code-text {
+  padding: 2px;
+  min-height: 60px;
+  overflow-y: auto;
+  font-family: 'Bitstream Vera Sans Mono','Courier',monospace;
+  font-size: 14px;
+  line-height: normal !important;
+}
+
+img.delete {
+  margin: 10px;
+}
+
+#post-body textarea {
+  height: 200px;
+}
+
 /* .highlight  { background: #ffffff; } */
 .highlight .c { color: #999988; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
@@ -62,3 +162,50 @@
 .highlight .vg { color: #008080 } /* Name.Variable.Global */
 .highlight .vi { color: #008080 } /* Name.Variable.Instance */
 .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+
+
+/* autocomplete */
+.ac_results {
+  padding: 0;
+  border: 1px solid #CCC;
+  background-color: #F2F2F2;
+  overflow: hidden;
+  margin-left: 1px;
+}
+
+.ac_results ul {
+  width: 100%;
+  list-style-position: outside;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ac_results iframe {
+  display:none;/*sorry for IE5*/
+  display/**/:block;/*sorry for IE5*/
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:-1;
+  filter:mask();
+  width:3000px;
+  height:3000px;
+}
+
+.ac_results li {
+  margin: 0;
+  padding: 2px 5px;
+  cursor: pointer;
+  display: block;
+  overflow: hidden;
+}
+
+.ac_loading {
+  background : Window url('/img/autocomplete-loader.gif') right center no-repeat;
+}
+
+.ac_over {
+  background-color: #fff;
+  color: #000;
+}
