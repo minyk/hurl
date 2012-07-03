@@ -68,7 +68,7 @@ here](http://github.com/twilio/hurl/issues). Patches welcome!
 Screenshot
 ----------
 
-[![Hurl](http://img.skitch.com/20091020-xtiqtj4eajuxs43iu5h3be7upj.png)](http://hurl.eu)
+[![Hurl](https://img.skitch.com/20120704-tjeaqjff6sdxnmcmad5rqwhh5a.png)](http://hurl.eu)
 
 
 Original Authors
