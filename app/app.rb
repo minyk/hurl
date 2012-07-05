@@ -12,6 +12,8 @@ module Hurl
     set :app_file,        __FILE__
     set :static,          true
 
+    set :protection, :except => :frame_options
+
     set :views, "#{dir}/templates"
 
     set :mustache, {
