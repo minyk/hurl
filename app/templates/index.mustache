@@ -1,15 +1,15 @@
 <form id="hurl-form" method="post" action="/" class="custom">
   <div class="row collapse">
-    <div class="two mobile-one columns">
+    <div class="two hide-for-small columns">
       <span class="prefix">URL:</span>
     </div>
-    <div class="ten mobile-three columns">
+    <div class="ten mobile-four columns">
       <input type="text" name="url" title="URL" value="{{ hurl_url }}" placeholder="http://github.com" />
     </div>
   </div>
 
   <div class="row collapse">
-    <div class="four columns select_method">
+    <div class="three mobile-two columns select_method">
       <select id="select-method" name="method">
         <option value="GET" {{# method_is_GET? }}selected="selected"{{/ method_is_GET? }}>GET</option>
         <option value="HEAD" {{# method_is_HEAD? }}selected="selected"{{/ method_is_HEAD? }}>HEAD</option>
@@ -18,7 +18,7 @@
         <option value="DELETE" {{# method_is_DELETE? }}selected="selected"{{/ method_is_DELETE? }}>DELETE</option>
       </select>
     </div>
-    <div class="eight columns end">
+    <div class="three mobile-two columns end">
       <label for="follow_redirects">
         <input type="checkbox" id="follow_redirects" name="follow_redirects" {{# follows_redirects? }}checked="checked"{{/ follows_redirects? }} /> follow redirects
       </label>
@@ -32,19 +32,19 @@
     </p>
       {{# hurl_param_keys }}
         <div class="row collapse" id="param-fields">
-          <div class="one columns">
+          <div class="one hide-for-small columns">
             <span class="prefix">key</span>
           </div>
-          <div class="four columns">
-            <input type="text" name="param-keys[]" value="{{ name }}"/>
+          <div class="four mobile-one columns">
+            <input type="text" name="param-keys[]" value="{{ name }}" placeholder="key"/>
           </div>
-          <div class="one columns">
+          <div class="one hide-for-small columns">
             <span class="prefix">value</span>
           </div>
-          <div class="four columns">
-            <input type="text" name="param-vals[]" value="{{ value }}"/>
+          <div class="four mobile-two columns">
+            <input type="text" name="param-vals[]" value="{{ value }}" placeholder="value"/>
           </div>
-          <div class="one columns end">
+          <div class="one mobile-one columns end">
             <a href="#" class="param-delete"><img class="delete" src="/img/delete.png" title="remove"/></a>
           </div>
         </div>
@@ -52,19 +52,19 @@
 
       {{# no_hurl_param_keys }}
         <div class="row collapse" id="param-fields" style="display:none;">
-          <div class="one columns">
+          <div class="one hide-for-small columns">
             <span class="prefix">key</span>
           </div>
-          <div class="four columns">
-            <input type="text" name="param-keys[]"/>
+          <div class="four mobile-one columns">
+            <input type="text" name="param-keys[]" placeholder="key"/>
           </div>
-          <div class="one columns">
+          <div class="one hide-for-small columns">
             <span class="prefix">value</span>
           </div>
-          <div class="four columns">
-            <input type="text" name="param-vals[]"/>
+          <div class="four mobile-two columns">
+            <input type="text" name="param-vals[]" placeholder="value"/>
           </div>
-          <div class="one columns end">
+          <div class="one mobile-one columns end">
             <a href="#" class="param-delete"><img class="delete" src="/img/delete.png" title="remove"/></a>
           </div>
         </div>
@@ -95,16 +95,16 @@
   </div>
 
   <div class="row collapse" id="basic-auth-fields" style="display:none;">
-    <div class="two columns">
+    <div class="two mobile-one columns">
       <span class="prefix">username</span>
     </div>
-    <div class="four columns">
+    <div class="four mobile-three columns">
       <input type="text" name="username" title="username" value="{{ hurl_username }}"/>
     </div>
-    <div class="two columns">
+    <div class="two mobile-one columns">
       <span class="prefix">password</span>
     </div>
-    <div class="four columns">
+    <div class="four mobile-three columns">
       <input type="text" name="password" title="password" value="{{ hurl_password }}"/>
     </div>
   </div>
@@ -115,19 +115,19 @@
 
   {{# hurl_header_keys }}
     <div class="row collapse" id="header-fields">
-      <div class="one columns">
+      <div class="one hide-for-small columns">
         <span class="prefix">key</span>
       </div>
-      <div class="four columns">
-        <input type="text" class="form-alpha" name="header-keys[]" value="{{ name }}"/>
+      <div class="four mobile-one columns">
+        <input type="text" class="form-alpha" name="header-keys[]" value="{{ name }}" placeholder="key"/>
       </div>
-      <div class="one columns">
+      <div class="one hide-for-small columns">
         <span class="prefix">value</span>
       </div>
-      <div class="five columns">
-        <input type="text" name="header-vals[]" value="{{ value }}"/>
+      <div class="five mobile-two columns">
+        <input type="text" name="header-vals[]" value="{{ value }}" placeholder="value"/>
       </div>
-      <div class="one columns end">
+      <div class="one mobile-one columns end">
         <a href="#" class="header-delete"><img class="delete" src="/img/delete.png" title="remove"/></a>
       </div>
     </div>
@@ -135,19 +135,19 @@
 
   {{# no_hurl_header_keys }}
     <div class="row collapse" id="header-fields" style="display:none;">
-      <div class="one columns">
+      <div class="one hide-for-small columns">
         <span class="prefix">key</span>
       </div>
-      <div class="four columns">
-        <input type="text" class="header-key" name="header-keys[]"/>
+      <div class="four mobile-one columns">
+        <input type="text" class="header-key" name="header-keys[]" placeholder="key"/>
       </div>
-      <div class="one columns">
+      <div class="one hide-for-small columns">
         <span class="prefix">value</span>
       </div>
-      <div class="five columns">
-        <input type="text" class="header-val" name="header-vals[]"/>
+      <div class="five mobile-two columns">
+        <input type="text" class="header-val" name="header-vals[]" placeholder="value"/>
       </div>
-      <div class="one columns end">
+      <div class="one mobile-one columns end">
         <a href="#" class="header-delete"><img class="delete" src="/img/delete.png" title="remove"/></a>
       </div>
     </div>
@@ -170,7 +170,7 @@
     </div>
   </div>
 
-  <div class="six columns" {{# try_it_hidden? }}style="display: none;"{{/ try_it_hidden? }}>
+  <div class="six columns hide-for-small" {{# try_it_hidden? }}style="display: none !important;"{{/ try_it_hidden? }}>
     <div class="panel radius">
       <h5>Try it out:</h5>
       <ul class="examples">
@@ -187,8 +187,8 @@
     <dl class="tabs">
       <dd><a href="#request">request</a></dd>
       <dd class="active"><a href="#response">response</a></dd>
-      <dd style="float: right"><a href="{{ hurl_permalink }}" class="permalink">permalink</a></dd>
-      <dd style="float: right"><a href="{{ view_permalink }}" class="full-size-link" target="_blank">view full size</a></dd>
+      <dd style="float: right"><a href="{{ hurl_permalink }}" class="permalink hide-for-small">permalink</a></dd>
+      <dd style="float: right"><a href="{{ view_permalink }}" class="full-size-link hide-for-small" target="_blank">view full size</a></dd>
     </dl>
 
     <ul class="tabs-content">

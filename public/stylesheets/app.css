@@ -12,7 +12,7 @@
 }
 
 form.custom div.select_method div.custom.dropdown, form.custom div.select_method ul {
-  width: 225px !important;
+  width: 95% !important;
 }
 
 div.panel.radius.help :last-child {

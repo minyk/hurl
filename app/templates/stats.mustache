@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="twelve columns">
+  <div class="four mobile-two columns centered">
     <h2>Stats</h2>
     <table>
       {{# hurl_stats}}
@@ -10,10 +10,7 @@
       {{/ hurl_stats}}
     </table>
   </div>
-</div>
-
-<div class="row">
-  <div class="twelve columns">
+  <div class="four mobile-two columns centered">
     <h2>Disk</h2>
     <table>
       {{# disk_stats}}
@@ -23,11 +20,6 @@
         </tr>
       {{/ disk_stats}}
     </table>
-  </div>
-</div>
-
-<div class="row">
-  <div class="twelve columns">
     <p>
       <span class="radius label">Deployed SHA</span>
       <a href='https://github.com/j0k3r/hurl/commit/{{ deployed_sha }}'>{{ deployed_sha }}</a>
