@@ -8,6 +8,15 @@ Now Hurl is an open source project for your enjoyment.
  - The unofficial url is: <http://hurl.eu/> (because hurl.it is so often **502 Bad Gateway**)
 
 
+About this fork
+---------------
+
+This fork is intented to fix some errors (autocomplete, pubic_path, CodeRay, and few others).
+I also removed GitHub login.
+
+And the main change is to the design. I rebuilt the layout using the fresh [Foundation v3](http://foundation.zurb.com/). Hurl.eu is now _responsive_ on phone and tablet.
+
+
 Installation
 ------------
 
@@ -46,6 +55,20 @@ Run Locally
 Now visit <http://localhost:9393>
 
 
+Run as a daemon
+---------------
+
+Install thin (or unicorn)
+
+    gem install thin
+
+Run thin as a daemon (the -s indicate how many instance you want)
+
+    thin -s 1 -R config.ru start
+
+Now visit <http://localhost:3000>
+
+
 Configuration
 -------------
 
@@ -62,7 +85,7 @@ Issues
 ------
 
 Find a bug? Want a feature? Submit an [issue
-here](http://github.com/twilio/hurl/issues). Patches welcome!
+here](http://github.com/j0k3r/hurl/issues). Patches welcome!
 
 
 Screenshot
@@ -74,8 +97,8 @@ Screenshot
 Original Authors
 ----------------
 
-* [Leah Culver][2]
-* [Chris Wanstrath][3]
+* [Leah Culver][1]
+* [Chris Wanstrath][2]
 
-[2]: http://github.com/leah
-[3]: http://github.com/defunkt
+[1]: http://github.com/leah
+[2]: http://github.com/defunkt
