@@ -14,7 +14,7 @@ About this fork
 This fork is intented to fix some errors (autocomplete, pubic_path, CodeRay, and few others).
 I also removed GitHub login.
 
-And the main change is to the design. I rebuilt the layout using the fresh [Foundation v3](http://foundation.zurb.com/). Hurl.eu is now _responsive_ on phone and tablet.
+And the main change is to the design. I rebuilt the layout using the fresh [Foundation v3](http://foundation.zurb.com/). Hurl.eu is now _responsive_ on phones and tablets.
 
 
 Installation
