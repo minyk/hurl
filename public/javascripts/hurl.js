@@ -1,11 +1,13 @@
 var Hurl = {
 
   removeEmptyData: function(data) {
-    var keepers = [], value;
+    var keepers = [],
+        value;
 
     // remove empty arrays and any default titular data
-    for (key in data) {
-      if (value = data[key].value) {
+    for (var key in data) {
+      value = data[key].value;
+      if (value) {
         if ($('input[name=' + data[key].name +'].defaulted:not(.focused)').val() != value) {
           keepers.push(data[key]);
         }
@@ -14,8 +16,9 @@ var Hurl = {
 
     data.splice(0, data.length);
 
-    for (key in keepers)
-      data.push( keepers[key] );
+    for (var keeper in keepers) {
+      data.push(keepers[keeper]);
+    }
 
     return true;
   },
@@ -93,7 +96,7 @@ var Hurl = {
   // add post param
   $('#add-param').click(function() {
     // toggle if post body is being shown
-    if ( $('#set-post-body .link-icon').text() == '-' ) {
+    if ($('#set-post-body .link-icon').text() == '-') {
       $('#set-post-body').click();
       return false;
     }
@@ -101,8 +104,8 @@ var Hurl = {
     var newField = $('#param-fields').clone();
     newField.toggle().attr('id', '');
     newField.addClass('param-field');
-    registerRemoveHandlers( newField, '.param-delete' );
-    $(this).parent().parent().append( newField );
+    registerRemoveHandlers(newField, '.param-delete');
+    $(this).parent().parent().append(newField);
     return false;
   });
 
@@ -110,7 +113,7 @@ var Hurl = {
   $('#set-post-body').click(function() {
     var icon = $(this).find('.link-icon');
 
-    if ( icon.text() == '+' ) {
+    if (icon.text() == '+') {
       icon.text('-');
       $('.param-field').hide();
       $('#post-body').show().find('textarea').attr('disabled', false);
@@ -123,22 +126,55 @@ var Hurl = {
     return false;
   });
 
-  if ( $('#post-body').is(':visible') ) {
+  if ($('#post-body').is(':visible')) {
     $('#set-post-body').click();
   }
 
-  // add header
+  /**
+   * add header
+   *
+   * clone hidden div, remove id (to avoid duplicate), add autocomplete
+   */
   $('#add-header').click(function() {
-    var newField = $('#header-fields').clone();
+    var newField = $('#header-fields-toclone').clone();
     newField.toggle().attr('id', '');
-    var inputAC = newField.find('input.header-key');
-    inputAC.hurlHeaders(inputAC);
-    registerRemoveHandlers( newField, '.header-delete' );
-    $(this).parent().parent().append( newField );
+
+    registerAutoComplete(newField, true);
+
+    registerRemoveHandlers(newField, '.header-delete');
+    $(this).parent().parent().append(newField);
+
     return false;
   });
 
-  // remove header / param
+  $('.header-fields:visible').each(function () {
+    var field = $(this);
+    field.attr('id', '');
+    registerAutoComplete(field, false);
+    registerRemoveHandlers(field, '.header-delete', true);
+  });
+
+  /**
+   * Add auto complete for header
+   */
+  function registerAutoComplete (e, is_new) {
+    var inputACK = e.find('input.header-key');
+    inputACK.hurlHeaders(inputACK);
+
+    var inputACV = e.find('input.header-val');
+
+    // remove value (in case of an existing header)
+    if (true === is_new) {
+      inputACK.attr('value', '');
+      inputACV.attr('value', '');
+    }
+  }
+
+  /**
+   * Remove header / param
+   *
+   * @param  {string} klass   binded class for the delete
+   */
   function registerRemoveHandlers(el, klass) {
     $(el).find(klass).click(function() {
       $(el).remove();
@@ -146,8 +182,8 @@ var Hurl = {
     });
   }
 
-  registerRemoveHandlers( document, '.header-delete' );
-  registerRemoveHandlers( document, '.param-delete' );
+  registerRemoveHandlers(document, '.header-delete');
+  registerRemoveHandlers(document, '.param-delete');
 
   // hurl it!
   $('#hurl-form').on('submit', function(e) {
@@ -172,7 +208,7 @@ var Hurl = {
     } else if (/hurl/.test(location.pathname) && data.hurl_id && data.view_id) {
       window.location = '/hurls/' + data.hurl_id + '/' + data.view_id;
     } else if (data.header && data.body && data.request) {
-      if ( /railsrumble/.test($('input[name=url]').val()) ) Hurl.pony();
+      if (/railsrumble/.test($('input[name=url]').val())) Hurl.pony();
       $('.permalink').attr('href', '/hurls/'+data.hurl_id+'/'+data.view_id);
       $('.full-size-link').attr('href', '/views/' + data.view_id);
       $('#requestTab').html(data.request);

@@ -42,7 +42,7 @@
           <div class="one hide-for-small columns">
             <span class="prefix">value</span>
           </div>
-          <div class="four mobile-two columns">
+          <div class="five mobile-two columns">
             <input type="text" name="param-vals[]" value="{{ value }}" placeholder="value"/>
           </div>
           <div class="one mobile-one columns end">
@@ -62,7 +62,7 @@
           <div class="one hide-for-small columns">
             <span class="prefix">value</span>
           </div>
-          <div class="four mobile-two columns">
+          <div class="five mobile-two columns">
             <input type="text" name="param-vals[]" placeholder="value"/>
           </div>
           <div class="one mobile-one columns end">
@@ -115,18 +115,18 @@
   </div>
 
   {{# hurl_header_keys }}
-    <div class="row collapse" id="header-fields">
+    <div class="row collapse header-fields" id="header-fields">
       <div class="one hide-for-small columns">
         <span class="prefix">key</span>
       </div>
       <div class="four mobile-one columns">
-        <input type="text" class="form-alpha" name="header-keys[]" value="{{ name }}" placeholder="key"/>
+        <input type="text" class="header-key" name="header-keys[]" value="{{ name }}" placeholder="key"/>
       </div>
       <div class="one hide-for-small columns">
         <span class="prefix">value</span>
       </div>
       <div class="five mobile-two columns">
-        <input type="text" name="header-vals[]" value="{{ value }}" placeholder="value"/>
+        <input type="text" class="header-val" name="header-vals[]" value="{{ value }}" placeholder="value"/>
       </div>
       <div class="one mobile-one columns end">
         <a href="#" class="header-delete"><img class="delete" src="/img/delete.png" title="remove"/></a>
@@ -134,25 +134,23 @@
     </div>
   {{/ hurl_header_keys }}
 
-  {{# no_hurl_header_keys }}
-    <div class="row collapse" id="header-fields" style="display:none;">
-      <div class="one hide-for-small columns">
-        <span class="prefix">key</span>
-      </div>
-      <div class="four mobile-one columns">
-        <input type="text" class="header-key" name="header-keys[]" placeholder="key"/>
-      </div>
-      <div class="one hide-for-small columns">
-        <span class="prefix">value</span>
-      </div>
-      <div class="five mobile-two columns">
-        <input type="text" class="header-val" name="header-vals[]" placeholder="value"/>
-      </div>
-      <div class="one mobile-one columns end">
-        <a href="#" class="header-delete"><img class="delete" src="/img/delete.png" title="remove"/></a>
-      </div>
+  <div class="row collapse" id="header-fields-toclone" style="display:none;">
+    <div class="one hide-for-small columns">
+      <span class="prefix">key</span>
     </div>
-  {{/ no_hurl_header_keys }}
+    <div class="four mobile-one columns">
+      <input type="text" class="header-key" name="header-keys[]" placeholder="key"/>
+    </div>
+    <div class="one hide-for-small columns">
+      <span class="prefix">value</span>
+    </div>
+    <div class="five mobile-two columns">
+      <input type="text" class="header-val" name="header-vals[]" placeholder="value"/>
+    </div>
+    <div class="one mobile-one columns end">
+      <a href="#" class="header-delete"><img class="delete" src="/img/delete.png" title="remove"/></a>
+    </div>
+  </div>
 
   <div class="row">
     <div class="four columns" id="send-wrap">

@@ -82,10 +82,6 @@ module Views
       arr
     end
 
-    def no_hurl_header_keys
-      hurl_header_keys.nil? || hurl_header_keys.empty?
-    end
-
     def hurl_basic_auth?
       @hurl['auth'] == 'basic'
     end
