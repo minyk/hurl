@@ -34,7 +34,7 @@
   }
 
   var Headers = {
-    "Accept": ["*/*", "text/plain", "text/html, text/plain", "application/xml", "application/json"],
+    "Accept": ["*/*", "text/plain", "text/html, text/plain", "application/xml", "application/json", "application/vnd.com.sensiolabs.connect+xml"],
     "Accept-Encoding": [ "compress", "deflate", "gzip", "compress, gzip", "gzip, deflate"],
     "Accept-Language": [ "en", "es", "de", "fr", "*" ],
     "Cache-Control": [ "cache", "no-cache" ],
