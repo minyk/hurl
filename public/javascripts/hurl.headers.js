@@ -41,7 +41,7 @@
     "Connection": [ "close", "keep-alive" ],
     "Cookie": null,
     "Content-Length": null,
-    "Content-Type": [ "application/octet-stream", "application/x-www-form-urlencoded", "application/xml", "application/json", "text/html", "text/plain", "text/xml" ],
+    "Content-Type": [ "application/octet-stream", "application/x-www-form-urlencoded", "application/xml", "application/json", "text/html", "text/plain", "text/xml", "application/vnd." ],
     "From": null,
     "Host": null,
     "If-Match": [ "*" ],
