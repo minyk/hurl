@@ -1,4 +1,3 @@
-
 .hr-blue {
   border: 0;
   background-color: #26B3CF;
@@ -34,7 +33,7 @@ ul.examples li.vimeo {
   background: transparent url(http://vimeo.com/favicon.ico) 0 40% no-repeat;
 }
 ul.examples li.github {
-  background: transparent url(http://github.com/favicon.png) 0 40% no-repeat;
+  background: transparent url(http://github.com/favicon.ico) 0 40% no-repeat;
 }
 ul.examples li.twilio {
   background: transparent url(http://www.twilio.com/favicon.ico) 0 40% no-repeat;
