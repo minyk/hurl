@@ -133,7 +133,6 @@ module Hurl
       end
     end
 
-
     #
     # error handlers
     #
@@ -145,7 +144,6 @@ module Hurl
     error do
       mustache :"500"
     end
-
 
     #
     # route helpers

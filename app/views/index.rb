@@ -19,7 +19,6 @@ module Views
       @view.nil?
     end
 
-
     #
     # @hurl related
     #
@@ -101,7 +100,6 @@ module Views
     def follows_redirects?
       @hurl['follows_redirects']
     end
-
 
     #
     # view related
