@@ -192,6 +192,19 @@ var Hurl = {
     $('.flash-error, .flash-notice').hide();
     $('#request-and-response').hide();
 
+    // trim url
+    var submitUrl = $('input[name=url]').val();
+    submitUrl = submitUrl.replace(/^\s+|\s+$/g, "");
+
+    // if user forgot the protocol, we add http by default
+    var myregexp = /^(ht|f)tps?:\/\//;
+    var match = myregexp.exec(submitUrl);
+    if (submitUrl.length > 0 && match === null) {
+      submitUrl = 'http://'+submitUrl;
+    }
+
+    $('input[name=url]').val(submitUrl);
+
     $(this).ajaxSubmit({
       beforeSubmit: Hurl.removeEmptyData,
       success:      showResponse
