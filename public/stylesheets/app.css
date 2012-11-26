@@ -27,21 +27,21 @@ ul.examples li {
   margin: 3px 0;
 }
 ul.examples li.twitter {
-  background: transparent url(http://twitter.com/favicon.ico) 0 40% no-repeat;
+  background: transparent url(//twitter.com/favicon.ico) 0 40% no-repeat;
 }
 ul.examples li.vimeo {
-  background: transparent url(http://vimeo.com/favicon.ico) 0 40% no-repeat;
+  background: transparent url(//vimeo.com/favicon.ico) 0 40% no-repeat;
 }
 ul.examples li.github {
-  background: transparent url(http://github.com/favicon.ico) 0 40% no-repeat;
+  background: transparent url(//github.com/favicon.ico) 0 40% no-repeat;
   background-size: 16px;
 }
 ul.examples li.twilio {
-  background: transparent url(http://www.twilio.com/favicon.ico) 0 40% no-repeat;
+  background: transparent url(//www.twilio.com/favicon.ico) 0 40% no-repeat;
   background-size: 16px;
 }
 ul.examples li.baconfile {
-  background: transparent url(http://baconfile.com/favicon.ico) 0 40% no-repeat;
+  background: transparent url(//baconfile.com/favicon.ico) 0 40% no-repeat;
 }
 
 div .about-video, div.unicorn p {
