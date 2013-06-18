@@ -34,14 +34,16 @@ ul.examples li.vimeo {
 }
 ul.examples li.github {
   background: transparent url(//github.com/favicon.ico) 0 40% no-repeat;
-  background-size: 16px;
 }
 ul.examples li.twilio {
   background: transparent url(//www.twilio.com/favicon.ico) 0 40% no-repeat;
-  background-size: 16px;
 }
 ul.examples li.baconfile {
   background: transparent url(//baconfile.com/favicon.ico) 0 40% no-repeat;
+}
+
+ul.examples li.twitter, ul.examples li.vimeo, ul.examples li.github, ul.examples li.twilio, ul.examples li.baconfile {
+  background-size: 16px;
 }
 
 div .about-video, div.unicorn p {
