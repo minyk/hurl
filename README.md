@@ -91,7 +91,7 @@ here](http://github.com/j0k3r/hurl/issues). Patches welcome!
 Screenshot
 ----------
 
-[![Hurl](https://img.skitch.com/20120704-tjeaqjff6sdxnmcmad5rqwhh5a.png)](http://hurl.eu)
+[![Hurl](http://i.imgur.com/2pNM3n7.png)](http://hurl.eu)
 
 
 Original Authors
