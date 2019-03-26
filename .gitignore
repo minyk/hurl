@@ -3,3 +3,4 @@ db/
 bin/
 env.rb
 log/
+.idea
