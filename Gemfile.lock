@@ -2,7 +2,7 @@ GEM
   remote: http://rubygems.org/
   specs:
     coderay (0.8.357)
-    curb (0.8.1)
+    curb (0.9.9)
     mustache (0.11.2)
     rack (1.4.1)
     rack-protection (1.2.0)
@@ -21,7 +21,7 @@ PLATFORMS
 
 DEPENDENCIES
   coderay (~> 0.8.357)
-  curb (~> 0.8.1)
+  curb (~> 0.9.9)
   mustache (~> 0.11.2)
   shotgun
   sinatra (~> 1.0)
